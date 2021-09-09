@@ -4,9 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 :root {
+  --backgroun-color: #0d3b66;
+  --complement-color: #faf0ca;
   --white-color: #fff;
   --primary-color: #eff1f7;
-  /* --secondary-color: #212121; */
+  --table1-color: #ee964b;
+  --table2-color: #f4d35e;
 }
 
 .dark-theme {
@@ -19,13 +22,12 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Arimo', sans-serif;
-  background-color: var(--white-color);
+  background-color: var(--backgroun-color);
   color: var(--secondary-color);
 }
 
 .btn {
   width: 80px;
-  /* align-self: end; */
   padding: 3px;
   border: 3px solid var(--secondary-color);
 }
@@ -46,6 +48,7 @@ h1 {
   font-weight: 400;
   letter-spacing: 0.4rem;
   font-size: 4.5rem;
+  color: var(--complement-color);
 }
 
 .h1-decoration {
@@ -55,7 +58,7 @@ h1 {
 
 h2 {
   font-size: 1.7rem;
-  letter-spacing: 0.1rem;
+  color: var(--complement-color);
 }
 
 table,
