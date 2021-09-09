@@ -33,8 +33,6 @@
     <p align="center">screen shot of the Leader Board</p>
 </p>
 
-# To-DO-List Live Demo
-[Live Demo Link](https://leonardoeng13.github.io/Leaderboard-API/)
 
 # Built with 🔨
 - HTML5, CSS3
