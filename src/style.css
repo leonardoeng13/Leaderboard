@@ -1,28 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+  --white-color: #fff;
+  --primary-color: #eff1f7;
+  --secondary-color: #212121;
+}
+
+.dark-theme {
+  --primary-color: #1b1b32;
+  --secondary-color: #fff;
+}
+
 body {
-  padding: 20px;
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  font-family: 'Arimo', sans-serif;
+  background-color: var(--white-color);
+  color: var(--secondary-color);
 }
 
 .btn {
   width: 80px;
   align-self: end;
   padding: 3px;
+  border: 3px solid var(--secondary-color);
+}
+
+header > img {
+  cursor: pointer;
+  margin-right: 30px;
+  width: 2.5rem;
+  height: 3rem;
 }
 
 h1 {
-  font-weight: bold;
-  font-size: 3rem;
-  margin: 5rem 0 0 0;
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.4rem;
+  font-size: 4.5rem;
+}
+
+.h1-decoration {
+  letter-spacing: 0.5rem;
+  text-shadow: 2px 2px 4px rgb(88, 112, 250);
 }
 
 h2 {
-  font-size: 1.5rem;
-}
-
-.table {
-  border: 1px solid #2e2e2e;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
 }
 
 table,
@@ -30,34 +59,58 @@ tr,
 th,
 td {
   border: 1px solid #ddd;
-  border-collapse: collapse;
+  background-color: var(--white-color);
 }
 
-.scores-list,
+tbody {
+  display: block;
+  height: 47vh;
+  overflow: auto;
+}
+
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead {
+  width: calc(100% - 1em);
+}
+
+table {
+  width: 400px;
+}
+
+.scores-list {
+  width: 50%;
+  height: 50vh;
+  margin: 30px;
+}
+
 .form-container {
   width: 50%;
-  height: 60vh;
-  margin: 40px;
-}
-
-#name,
-#score {
-  width: 50%;
-}
-
-button {
-  border: 1px solid #000;
-  margin: 1rem 0;
+  height: 30vh;
 }
 
 form > input,
 button {
   margin: 0.5rem;
-  padding: 5px;
-  width: 15%;
+  padding: 5px 10px;
+  width: 40%;
 }
 
 @media screen and (max-width: 992px) {
+  h1 {
+    letter-spacing: 0.2rem;
+    font-size: 2.7rem;
+  }
+
+  header > img {
+    width: 3rem;
+  }
+
   .section-container {
     padding: 5px;
     flex-direction: column;

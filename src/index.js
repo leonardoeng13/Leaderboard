@@ -1,59 +1,40 @@
 /* eslint-disable no-unused-vars */
-import _ from 'lodash';
+import 'lodash';
 import './style.css';
+import render from './modules/renderScores.js';
+import { postApi, getApi } from './modules/apiInteracting.js';
 
-const players = [
-  {
-    name: 'Player one',
-    score: 100,
-  },
-  {
-    name: 'Player two',
-    score: 99,
-  },
-  {
-    name: 'Player three',
-    score: 98,
-  },
-  {
-    name: 'Player four',
-    score: 97,
-  },
-  {
-    name: 'Player five',
-    score: 96,
-  },
-  {
-    name: 'Player six',
-    score: 95,
-  },
-  {
-    name: 'Player seven',
-    score: 94,
-  },
-  {
-    name: 'Player eight',
-    score: 93,
-  },
-  {
-    name: 'Player nine',
-    score: 92,
-  },
-  {
-    name: 'Player ten',
-    score: 91,
-  },
-];
+const urlGame = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/ZxQudq7sBhFDKmuNFng9/scores/';
 
-const render = () => {
-  const table = document.getElementById('score-table');
-  players.forEach((player, index) => {
-    const { name, score } = player;
-    table.innerHTML += `<tr id="user-${index}">
-    <td id="name-${index}">${name}</td>
-    <td id="score-${index}">${score}</td>
-    </tr>`;
+const form = document.getElementById('form');
+const refresh = document.getElementById('refresh');
+const table = document.getElementById('score-table');
+const icon = document.querySelector('.icon');
+
+refresh.addEventListener('click', () => {
+  getApi(urlGame)
+    .then((response) => {
+      table.innerHTML = '';
+      render(response.result);
+    });
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  postApi(urlGame);
+  e.target.reset();
+});
+
+getApi(urlGame)
+  .then((res) => {
+    render(res.result);
   });
-};
 
-render();
+icon.addEventListener('click', (e) => {
+  document.body.classList.toggle('dark-theme');
+  if (document.body.classList.contains('dark-theme')) {
+    e.target.src = 'assets/images/sun.png';
+  } else {
+    e.target.src = 'assets/images/moon.png';
+  }
+});
