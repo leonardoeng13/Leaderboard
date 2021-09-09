@@ -63,7 +63,7 @@
 
 # Authors
 
-👤 **EllaouziHamza**
+👤 **Leo de Andrade**
 
 - GitHub: [leonardoeng13](https://github.com/leonardoeng13)
 - LinkedIn : [Leonardo de Andrade](https://www.linkedin.com/in/leonardodeandrade)
